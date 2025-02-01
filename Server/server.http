@@ -1,0 +1,7 @@
+### get calendar 
+GET http://localhost:3000/api/calendar
+Content-Type: application/json
+
+
+
+
