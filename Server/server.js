@@ -1,10 +1,13 @@
 ﻿const express = require('express')
 const app = express()
+const { JsonCalendar } = require('json-calendar')
+const calendar = new JsonCalendar()
 const port = 3000
 app.get('/api/calendar', (req, res) => {
-  return res.json({daysOfTheWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']})
-});
+  const daysOfTheWeek = calendar.weeks;
+  return res.json({daysOfTheWeek: daysOfTheWeek})
 
+})
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
