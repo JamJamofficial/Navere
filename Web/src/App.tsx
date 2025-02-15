@@ -1,10 +1,9 @@
 import "./App.css";
-import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
 function App() {
-  const [calendar, setCalendar] = useState([]);
+  const [calendar, setCalendar] = useState<{ id: string; day: string }[][]>([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/calendar")
